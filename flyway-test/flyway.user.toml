@@ -1,0 +1,11 @@
+[environments.app-db]
+user = "root"
+password = "${localSecret.Flyway Desktop 5f8fdb2e-f64e-41ce-914c-ed5af737eea6}"
+
+[environments.sandbox-db]
+user = "root"
+password = "${localSecret.Flyway Desktop 02309653-a176-42e0-b700-77b1e81a6c8b}"
+
+[environments.prod-db]
+user = "root"
+password = "${localSecret.Flyway Desktop 784a2d58-5197-4247-bd1f-524d3fe1f49e}"

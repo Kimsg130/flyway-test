@@ -1,0 +1,35 @@
+databaseType = "MySql"
+name = "flyway-test"
+id = "2a2b163a-6863-4a41-a8a9-910e2bd256c5"
+
+[flywayDesktop]
+developmentEnvironment = "development"
+shadowEnvironment = "shadow"
+schemaModel = "./schema-model"
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[redgateCompare.mysql.options.ignores]
+ignoreNewlinesInTextObjects = "off"
+
+[flyway]
+mixed = true
+outOfOrder = true
+locations = [ "filesystem:migrations" ]
+validateMigrationNaming = true
+
+[environments.app-db]
+url = "jdbc:mysql://localhost:3306"
+schemas = [ "flyway_history_schema" ]
+displayName = "app-db"
+
+[environments.sandbox-db]
+url = "jdbc:mysql://localhost:3307?allowPublicKeyRetrieval=true"
+schemas = [ "flyway_history_schema" ]
+displayName = "sandbox-db"
+
+[environments.prod-db]
+url = "jdbc:mysql://localhost:3308?allowPublicKeyRetrieval=true"
+schemas = [ "flyway_history_schema" ]
+displayName = "prod-db"
